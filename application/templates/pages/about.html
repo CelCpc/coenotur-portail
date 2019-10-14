@@ -1,0 +1,58 @@
+
+<!-- Here is the html code for the about ("à propos") page -->
+<!-- For each page in html format which appears in our application -->
+<!-- we are using a predefine blocks system and css allowed by bootstrap (see the css folder called static) -->
+<!-- feel free to visit the container page ("conteneur.html") for more details about the choices we made
+ regarding the appearance of our application -->
+
+{% extends "conteneur.html" %}
+
+{% block titre %}
+
+{% endblock %}
+
+{% block corps %}
+
+
+<h1><i>A propos</i></h1>
+
+<p class="text-justify"> Le portail <i>Coenotur</i> a été réalisée dans le cadre du programme éponyme portant sur les rapports entre les communautés religieuses
+    de Tours revendiquant l’héritage de saint Martin (Marmoutier, la communauté fondée par lui, et Saint-Martin, celle rassemblée autour de
+    sa sépulture), entre synergie et concurrence, et sur leurs réseaux. </p>
+ <p class="text-justify">   Il étudie les rapports de ces communautés de statut divers, voire fluctuant (canonial ou monastique), entre elles ainsi que leurs
+     rapports avec les établissements fondés dans leur mouvance (Saint-Julien, Cormery, Saint-Cosme et Beaumont-lès-Tours) et avec l’archevêque
+     et le chapitre cathédral (Saint-Maurice), tant du point de vue institutionnel qu’en ce qui concerne les aspects sociaux, religieux,
+     culturels, topographiques et architecturaux. Les communautés tourangelles offrent l’occasion unique d’observer dans la longue durée,
+     depuis l’Antiquité tardive jusqu’au Moyen Âge central, les transformations du cénobitisme occidental et leurs implications à l’échelle
+     d’une microsociété polycentrique en milieu urbain et suburbain.
+ <p class="text-justify"> Ce programme est décomposé en trois axes interconnectés qui font tous appel à une grande diversité de sources et de méthodes d’analyse. Tout
+     d’abord, l’étude des relations entre Saint-Martin et Marmoutier, qui suppose un réexamen critique de l’ensemble des
+     témoignages écrits datant du haut Moyen Âge et de la production des scriptoria tourangeaux, permettra de reconstituer la séparation
+     institutionnelle entre ces deux communautés au cours du Xe s. Ces dernières ont développé des réseaux de relations d’ordre divers
+     (institutionnel ou amical) avec d’autres établissements : on étudiera les divers témoignages (notamment architecturaux, liturgiques
+     et diplomatiques) des communautés martiniennes et des membres de leurs réseaux pour mieux apprécier l’impact social, cultuel et culturel
+     des choix en matière de vie cénobitique. En effet, les différences se sont cristallisées principalement autour des manières de pratiquer
+     la vie cénobitique, notamment lors de la réforme monastique du Xe s. et de la réforme grégorienne des XIe-XIIe s. Dans ce contexte,
+     Marmoutier s’impose comme le « Cluny de l’Ouest ». L’étude des bâtiments conventuels est l’occasion d’un réexamen des pratiques
+     monastiques du grand établissement ligérien et du discours d’excellence que les moines y ont développé : c’est pourquoi le projet
+    prévoit une analyse du cas de Marmoutier.</p>
+ <p class="text-justify">
+Le programme aboutira à la production de bases de données textuelles et de SIG en ligne et à la publication d’articles, d’une édition
+     critique avec traduction des sources narratives et d’un ouvrage de synthèse (tous deux en coédition).
+     La numérisation de nombreux manuscrits permettra la constitution d’une bibliothèque virtuelle des fonds tourangeaux
+     accessible aux chercheurs et au grand public. Une vidéo rendra compte des transformations architecturales de l’église abbatiale de
+     Marmoutier entre le Xe et le XIIe s. et un disque sera produit pour faire connaître les œuvres liturgiques alors chantées dans
+     ce monastère.</p>
+
+</p>
+
+
+<p class="text-light bg-dark rounded"><br> <b>&nbsp; &nbsp; &nbsp; <u>Le portail Coenotur a trois objectifs principaux :</u></b><br/>
+    &nbsp;<ul class="list-group">
+  <li class="list-group-item">proposer un outil permettant la visulisation de l'ensemble des bases de données développées dans le cadre du projet</li>
+  <li class="list-group-item">permettre une recherche avancée à l'intérieur de ces mêmes bases de données</li>
+  <li class="list-group-item">offrir un lecteur de manuscrits et sources éditées en ligne</li>
+</ul>
+ </p>
+
+{% endblock %}

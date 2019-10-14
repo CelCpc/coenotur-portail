@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+
+    <!-- Nous avons créé un conteneur html qui détermine la disposition des différents blocs
+        (bloc titre et bloc corps)
+        et que l'on a étendu à toutes les pages html que nous avons réalisées -->
+
+    <!-- Here is the html container which fixes the layout of the different blocks (title block and body block)
+    we extended this layout to every html pages we made-->
+
+
+<head>
+    <head>
+        <meta charset="UTF-8">
+        <title>Coenotur {%block titre %}{%endblock%}</title>
+         {% include "partials/css.html" %}
+         {% include "partials/metadata.html" %}
+
+        <style type="text/css">
+               body { background-image:url('') !important;
+                } /* Adding !important forces the browser to overwrite the default style applied by Bootstrap */
+                a{color:#AFAFAF;}
+
+
+</style>
+
+    </head>
+
+
+
+    <body>
+    <img src="" width="100%" class="rounded"></br></br>
+<div class="container">
+    <nav class="navbar navbar-expand-md navbar-dark float-top rounded" style="background-color:#000; opacity: 0.7;" >
+        <a class="navbar-brand" href="{{ url_for('accueil') }}"> Cœnobia Turonenses  </a>
+<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse">
+       <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+      <li class="nav-item active">
+    <a class="nav-link" href="/">Accueil</a>
+      <li class="nav-item active">
+        <a class="nav-link" href="/about">À propos <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="/contact">Contact</a>
+      </li>
+    </ul>
+       <form class="form-inline ml-auto">
+      <div class="md-form my-0">
+        <input class="form-control" type="text" placeholder="Rechercher" aria-label="Search">
+      </div>
+      <button href="#!" class="btn btn-secondary btn-md my-0 ml-sm-2" type="submit">Rechercher</button>
+    </form>
+
+
+  </div>
+
+        <!-- Les lignes suivantes permettent de créer des espaces entre le lien contact et le cadre recherche -->
+
+        <!-- The following lines create spaces between the contact link and the search box -->
+        &nbsp;
+        &nbsp;
+        &nbsp;
+        &nbsp;
+        &nbsp;
+        &nbsp;
+        &nbsp;
+        &nbsp;
+        &nbsp;
+
+    </nav>
+</br>
+    <div class="row">
+        <div class="col">
+            {% block corps%}{%endblock%}
+            <!-- Footer -->
+            <hr>
+<footer class="page-footer font-small blue">
+
+  <!-- Copyright -->
+    <!-- Ici nous appelons la variable now de la fonction définie dans le fichier routes et nous lui ajoutons l'élément
+     year afin de n'afficher que l'année -->
+
+    <!-- Here we call the variable now from the function that we previously defined in the routes file. Then we add
+    the element year so that it only display the year and not the hours -->
+
+  <div class="footer-copyright text-center py-3">© {{ now.year }} - Crédits :
+    <a href="https://www.univ-tours.fr/" target="_blank">
+<img src="/static/pictures/logoUnivTours.png" width="90px" class="rounded"></a>
+      | <a href="http://citeres.univ-tours.fr/" target="_blank"><img src="/static/pictures/logoCITERES.png" width="90px" class="rounded"> </a>
+      | <a href="https://anr.fr/Projet-ANR-18-FRAL-0007" target="_blank"><img src="/static/pictures/anr-logo.png" width="90px" class="rounded"></a>
+      |  <a href="https://www.uni-hamburg.de/en.html" target="_blank"><img src="/static/pictures/uhh_logo.gif" height="40px" class="rounded"></a>
+  </div>
+  <!-- Copyright -->
+
+</footer>
+<!-- Footer -->
+        </div>
+    </div>
+</div>
+    </body>
+</html>
