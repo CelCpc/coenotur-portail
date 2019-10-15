@@ -24,3 +24,9 @@ def inject_now():
 @app.route("/about")
 def about():
     return render_template("pages/about.html")
+
+@app.route("/contact")
+def contact():
+    return render_template('pages/contact.html')
+
+
