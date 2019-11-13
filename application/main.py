@@ -1,12 +1,6 @@
+from flask import Flask
+import os.path
 
-from flask import Flask, request
-# Nous avons ensuite importé SQLAlchemy afin de pouvoir travailler sur notre base de données via notre application Python.
-# We imported SQLAlchemy to work on our database via the Python application
-
-from flask_sqlalchemy import SQLAlchemy
-
-
-import os
 
 chemin_actuel = os.path.dirname(os.path.abspath(__file__))
 templates = os.path.join(chemin_actuel, "templates")
@@ -15,7 +9,6 @@ statics = os.path.join(chemin_actuel, "static")
 
 # Nous avons instancié  flask
 # initialize the application by instancing flask
-
 app = Flask("Coenotur", template_folder=templates, static_folder=statics)
 
 #grâce à la configuration debug = True, si nous avons une erreur, la page montrera les détails de cette erreur
@@ -46,3 +39,5 @@ app.config['DEBUG'] = True
 
 # import the different routes
 import application.routes
+
+from .routes import accueil

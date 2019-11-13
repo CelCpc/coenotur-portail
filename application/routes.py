@@ -6,6 +6,7 @@ from .main import app
 import random
 from datetime import datetime
 
+
 @app.route("/")
 def accueil():
     return render_template("pages/accueil.html")
@@ -30,3 +31,7 @@ def contact():
     return render_template('pages/contact.html')
 
 
+
+@app.route("/equipe")
+def equipe():
+    return render_template('pages/equipe.html')
