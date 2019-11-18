@@ -1,43 +1,44 @@
 from flask import Flask
+from flask_sqlalchemy import SQLAlchemy
+from sqlalchemy import Column, Integer, String, ForeignKey, Date, Text, cast
+from sqlalchemy.orm import backref
+from sqlalchemy.dialects.postgresql import INET
+
+from flask_login import LoginManager
+import os
 import os.path
+from .constantes import SECRET_KEY
+
 
 
 chemin_actuel = os.path.dirname(os.path.abspath(__file__))
 templates = os.path.join(chemin_actuel, "templates")
 statics = os.path.join(chemin_actuel, "static")
+chemin_db = os.path.join(chemin_actuel, "db_coenotur")
+
 
 
 # Nous avons instancié  flask
 # initialize the application by instancing flask
-app = Flask("Coenotur", template_folder=templates, static_folder=statics)
+app = Flask("Coenotur", template_folder = templates, static_folder = statics)
 
 #grâce à la configuration debug = True, si nous avons une erreur, la page montrera les détails de cette erreur
 
 # configuration of debug = True so that whenever we get an error, details are shown on the landing page
 
 app.config['DEBUG'] = True
-# La seule configuration dont nous avons eu besoin était la Database_URI.
-# Nous avons configuré notre base de données en indiquant le chemin vers notre
-# database qui s'intitule "".
+app.config['SECRET_KEY'] = SECRET_KEY
 
-# The only configuration we needed here was Database_URI
-# we configured our database by pointing out the path leading to our database
-# entitled ""
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///./db_coenotur'
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
+db = SQLAlchemy(app)
+db.create_all()
 
-# Nous avons instancié flask-SQLAlchemy par la commande suivante :
-
-# intialize the database and instancing flask-SQLAlchemy by the following command :
-
-# A partir de ces quelques manipulations, nous avons pu créer notre base de données.
-
-# After some manipulations we were able to create our database
-
-
-# La ligne de code suivante nous a permis de remplir notre base de données à partir d'une base vide.
-
-
+login = LoginManager(app)
 # import the different routes
 import application.routes
 
-from .routes import accueil
+
+
+from .routes import accueil, connexion, deconnexion, about

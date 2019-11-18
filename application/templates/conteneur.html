@@ -66,35 +66,37 @@
       </div>
     </li>
        <li class="nav-item">
-      <a class="nav-link" href="#">Historiographie</a>
+      <a class="nav-link" href="#">Réseaux</a>
     </li>
-       <li class="nav-item">
-      <a class="nav-link" href="#">Prosopographie</a>
-    </li>
-      </li>
-       <li class="nav-item">
-      <a class="nav-link" href="#">Liturgie</a>
-    </li>
-      </li>
        <li class="nav-item">
       <a class="nav-link" href="#">Architecture</a>
     </li>
-      </li>
        <li class="nav-item">
-      <a class="nav-link" href="#">Diplomatique</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#">Références</a>
+      <a class="nav-link" href="#">Musique</a>
     </li>
     <li class="nav-item">
       <a class="nav-link" href="#">Bibliographie</a>
     </li>
   </ul>
  <ul class="navbar-nav ml-auto">
-    <li class="nav-item">
+
+    {% if not current_user.is_authenticated %}
+
+              <li class="nav-item">
+                <a class="nav-link" href="{{url_for('inscription')}}">Inscription</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{{url_for('connexion')}}">Connexion</a>
+              </li>
+            {% else %}
+
+              <li class="nav-item">
+                <a class="nav-link" href="{{url_for('deconnexion')}}">Déconnexion ({{current_user.user_nom}})</a>
+              </li>
+                  {% endif %}
+     <li class="nav-item">
       <a class="nav-link" href="https://github.com/CelCpc/coenotur-portail"><img src="{{url_for("static", filename="pictures/github1.png")}}" width="30" height="30" class="d-inline-block align-top" alt="github">   </a>
     </li>
-
   </ul>
 
 </nav>
