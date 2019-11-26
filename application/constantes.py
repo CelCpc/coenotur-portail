@@ -11,7 +11,7 @@ if os.environ.get('DATABASE_URL') is None:
     class _PRODUCTION:
         SECRET_KEY = SECRET_KEY
         # On configure la base de données de production
-        SQLALCHEMY_DATABASE_URI = 'sqlite:///../db_coenotur'
+        SQLALCHEMY_DATABASE_URI = 'sqlite:///./db_coenotur'
         SQLALCHEMY_TRACK_MODIFICATIONS = False
 else:
     class _PRODUCTION:

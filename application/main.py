@@ -14,7 +14,6 @@ from .constantes import SECRET_KEY
 chemin_actuel = os.path.dirname(os.path.abspath(__file__))
 templates = os.path.join(chemin_actuel, "templates")
 statics = os.path.join(chemin_actuel, "static")
-chemin_db = os.path.join(chemin_actuel, "db_coenotur")
 
 
 
@@ -33,7 +32,6 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///./db_coenotur'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 db = SQLAlchemy(app)
-db.create_all()
 
 login = LoginManager(app)
 # import the different routes
